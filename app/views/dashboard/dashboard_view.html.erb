@@ -1,0 +1,28 @@
+<html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNiGUikeRTKQgK2OwIPMBom30IMdZlYY&callback=initMap"
+    async defer></script>
+
+<div style='width: 800px;'>
+ <div id="map" style='width: 130%; height: 600px;'></div>
+</div>
+
+<script>
+var map;
+
+function initMap() {
+  var myLatLng = {lat: 17.103090, lng: 81.542862};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 6,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Gopalapuram'
+  });
+}
+</script>
+</div>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<body  style="background: linear-gradient(to bottom, #cce6ff 0%,#cce6ff 100%);">
+ <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag  "application" %>
+ <%= form_tag( '/report_search', :method => :get,:id => 'dateform' ) do%>
+<div class="container">                                                                                     
+  <div class="table-responsive" >          
+  <table class="table" border="1" style="width:80%;">   
+      <tr>
+        <th rowspan="2"> <font size="6"> Report</font></th>
+        <th>Select Inverter</th>
+        <th>Controller No</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th rowspan="2">
+	<button type="button" class="btn btn-default" id="search" >
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button> </th>       
+      </tr>
+      <tr>      
+        <td>
+
+<select id="selinverter" name="selinverter" >
+<option value="0">Inverter 0</option>
+<option value="1">Inverter 1</option>
+</select>
+
+</td>
+ <td>
+
+<input type="text" id="controllerid" name="controllerid" style="width:90px" >
+
+
+</td>
+        <td><input  type="text" id="fromdate" name="fromdate" style="width:80px"></td>
+        <td> <input  type="text" id="todate" name="todate" style="width:80px" ></td>
+   
+      </tr>
+   
+  </table>
+  </div>
+</div>
+<%end%>
+
+
+<script>
+
+ $(function(){
+      $("#fromdate").datepicker({
+         dateFormat: 'yy/mm/dd',       
+       onSelect: function(dateText) {
+       
+      }
+   });
+});
+ 
+
+ $(function(){
+      $("#todate").datepicker({
+         dateFormat: 'yy/mm/dd',
+         onSelect: function(dateText) {
+         
+       }
+   }); 
+});
+
+
+$(
+    function(){
+     
+        $('#search').click(function(){
+                               
+                   $("#dateform").submit();  
+        });
+        
+    }
+);
+</script>
+
+<div class="inverterdatapane" >
+<table id="table_id" class="display nowrap" border="1" width="100%">
+<thead>
+<tr>
+
+<th>Date </th>
+<th>Time </th>
+<th>kw solar</th>
+<th>kw Total </th>
+<th>kw R.Phase</th>
+<th>kw Y.Phase</th>
+<th>kw B.Phase</th>
+<th>Desire<br>power<br>output</th>
+<th>Achieved<br>Inverter<br>Power</th>
+<th>Rated<br>Power<br>Percentage</th>
+
+</tr>
+</thead>
+<% @report_details.each do |val| %>
+<tr>
+<td ><%= "#{val['updated_date']}" %></td>
+<td><%= "#{val['updated_time']}" %></td>
+<td><%= "#{val['solar_kw']}" %></td>
+<td><%= "#{val['kw_total']}" %></td>
+<td><%= "#{val['kw_rphase']}" %></td>
+<td><%= "#{val['kw_yphase']}" %></td>
+<td><%= "#{val['kw_bphase']}" %></td>
+<td><%= "#{val['desired_power_output']}" %></td>
+<td><%= "#{val['achieved_inverter_power']}" %></td>
+<td><%= "#{val['rated_power_percentage']}" %></td>
+</tr>
+<% end %>
+</table>
+</div>
+
+<script type="text/javascript">
+  
+        $('#table_id').DataTable(
+{
+        "scrollX": true,
+	"scrollY": true,
+	"oLanguage": {
+   "sSearch": "Find: "
+ },
+dom: 'Bfrtip',
+        buttons: [
+		{
+                extend: 'copyHtml5',
+               messageTop: 'From Date: '+$('#fromdate').val()+"\n"+' To Date: '+$('#todate').val()+"\n",
+                 title: 'APEX COMTEL - Solar Inverter',
+		filename: $('#fromdate').val()+"-"+$('#todate').val()+"APEX COMTEL - Solar Inverter"
+                },
+		{
+                extend: 'csvHtml5',
+                messageTop: 'From Date: '+$('#fromdate').val()+"\n"+' To Date: '+$('#todate').val()+"\n",
+                title: 'APEX COMTEL - Solar Inverter',
+		filename: $('#fromdate').val()+"-"+$('#todate').val()+"APEX COMTEL - Solar Inverter"
+                },
+                {
+                extend: 'excelHtml5',
+                messageTop: 'From Date: '+$('#fromdate').val()+"  "+' To Date: '+$('#todate').val()+"\n",
+                title: 'APEX COMTEL - Solar Inverter',
+		filename: $('#fromdate').val()+"-"+$('#todate').val()+"APEX COMTEL - Solar Inverter"			
+                },
+                {
+                 extend: 'pdfHtml5',
+		 messageTop: 'From Date: '+$('#fromdate').val()+"\n"+' To Date: '+$('#todate').val()+"\n",
+                 title: 'APEX COMTEL - Solar Inverter',
+		 filename: $('#fromdate').val()+"-"+$('#todate').val()+"APEX COMTEL - Solar Inverter",
+		 customize: function(doc) {
+    			doc.styles.title = {
+      			color: 'blue',
+      			fontSize: '14',
+     			alignment: 'center'
+    		}   
+  	      } 
+                 
+            },
+	    {
+                extend: 'print',
+		orientation: 'landscape',
+		//fontSize: '20',
+		messageTop: 'From Date: '+$('#fromdate').val()+"\n"+' To Date: '+$('#todate').val()+"\n",
+                title: 'APEX COMTEL - Solar Inverter',
+		filename: $('#fromdate').val()+"-"+$('#todate').val()+"APEX COMTEL - Hybrid Solar Inverter",
+		 
+		 
+  
+	    }
+        ]
+}    
+);
+  
+</script>
+</body>
+</html>

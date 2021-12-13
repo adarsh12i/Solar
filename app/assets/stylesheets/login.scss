@@ -1,0 +1,200 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body
+{
+margin: 0;
+padding: 0;
+background: -moz-linear-gradient(top, rgba(249,252,247,1) 0%, rgba(245,249,240,1) 100%);
+background-size: cover;
+font-family: sans-serif;
+//border-style: solid;
+// width: 100%;
+//border: 10px solid green;
+
+}
+.flash
+{
+font-weight: bold;
+font-family: sans-serif;
+margin-top:1px;
+width: 1300px;
+background: #FF0000;
+font-size: 18px;
+text-align: center;
+}
+
+.logo_main {
+	margin: 10px 0px 0px 20px;
+	padding: 0px 0px 0px 0px;
+	width: 80px;
+	float: left;
+	display: inline;
+	border:1px solid #003399;
+	}
+
+.logo {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	width: 1218px;
+	height: 60px;
+	}
+
+.logo_heading {
+	margin: 20px 10px 10px 10px;
+	padding: 0px 0px 0px 0px;
+	width: 928px;
+	color: #007074;
+	font: bold 18px verdana, sans-serif;
+	//text-align: center;
+	float: left;
+	display: inline;
+	}
+.header
+ {
+	margin: 0px 0px 0px 0px;
+	padding: 6px 0px 6px 0px;
+	width: 100%;
+	background: #fff;
+	border-top: 2px solid #D8D8D8;
+	border-bottom: 2px solid #D8D8D8;
+	//text-align: center;
+	//font-size: 28px;
+	}
+
+
+
+.maincontainer {
+	margin: 20px 0px 20px 10px;
+	padding: 0px 0px 0px 0px;
+	float: left;
+	display: inline;
+	//border:1px solid #003399;
+
+	}
+
+
+
+.imagebox
+{
+	
+	margin: 80px 50px 10px 200px;
+	padding: 0px 0px 0px 0px;
+	float: left;
+	display: inline;
+	border:1px solid #003399;
+	
+
+}
+
+.rightcontents {
+	margin: 27px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+	width: 258px;
+	float: left;
+	display: inline;
+	}
+
+.user
+{
+width: 100px;
+height: 100px;
+border-radius: 50px;
+overflow: hidden;
+position: relative;
+top: calc(-100px/2);
+left: calc(50% - 50px);
+}
+
+
+.login p
+{
+margin: 0;
+padding: 0;
+font-weight: bold;
+color: #fff;
+}
+.login input
+{
+width: 100%;
+margin-bottom: 20px;
+}
+.login input[type="text"],
+.login input[type="password"]
+{
+ border: none;
+ border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-sixe: 16px;
+}
+::placeholder
+{
+color: rgba(255,255,255,.5);
+}
+.login input[type="submit"]
+{
+border: none;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+background: #ff267e;
+cursor: pointer;
+border-radius: 20px;
+}
+.login input[type="submit"]:hover
+{
+background: #efed40;
+color: #262626;
+}
+.login a
+{
+color: #fff;
+font-size: 14px;
+font-weight: bold;
+}
+
+
+.login {
+	margin: 80px 50px 0px 5px;
+	padding: 0px 0px 0px 0px;
+	//width: 246px;
+	//border: 1px solid #DFDFDF;
+
+
+
+padding: 0px 40px;
+width: 300px;
+height:350px;
+box-sizing: border-box;
+background:rgba(0,0,0,.5);
+
+	float: left;
+	display: inline;
+	}
+.login_heading {
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 5px 0px;
+	color: #0033FF;
+	background: #FAFAFA;
+	font:bold 12px verdana, sans-serif;
+	text-align: center;
+	letter-spacing: 1px;
+	border-bottom: 1px solid #DFDFDF;
+	display: block;
+
+	}
+
+.leftcontents {
+	margin: 20px 0px 20px 10px;
+	padding: 0px 0px 0px 0px;
+	float: left;
+	display: inline;
+	//border:1px solid #003399;
+	}
+

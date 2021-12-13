@@ -1,0 +1,53 @@
+<html>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<head>
+</head>
+<body>
+
+<div class="header">
+<div class ="logo">
+<%= image_tag("sun.gif", class: "logo_main") %>
+<div class="logo_heading">
+SOLAR POWER REMOTE MONITORING SYSTEM
+</div>
+</div>
+</div>
+
+<div class="flash">
+<%= flash[:notice].html_safe unless flash[:notice].blank? %>
+</div>
+
+
+<div class="maincontainer">
+				<div class="contents">
+					<div class="leftcontents">
+						 <%= image_tag("solar1.jpg", class: "imagebox") %>
+					</div>
+					<div class="rightcontents">
+	<div class="login">
+		<%= image_tag("user.jpg", class: "user") %>
+
+<%= form_tag( '/loginpost', :method => :post,:id => 'submitid' ) do%>
+<form >
+<p>Email</p>
+<input type="text" id="username" name="username" placeholder="Enter Email">
+<p>Password</p>
+<input type="password" id="password" name="password" placeholder="********">
+<input type="submit" name="" id="submitid" value="Sign In">
+</div>
+<% end %>
+</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+</form>
+</body>
+</html>
+

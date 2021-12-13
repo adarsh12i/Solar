@@ -1,0 +1,2 @@
+module InverterReportHelper
+end

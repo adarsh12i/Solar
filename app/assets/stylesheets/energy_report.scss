@@ -1,0 +1,36 @@
+// Place all the styles related to the energy_report controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import 'jquery-ui/datepicker.css';
+
+
+.energy-table-responsive
+{
+font-style: normal;
+font-family: "Times New Roman", Times, serif;
+margin-top: 2px;
+ font-size: 12px;
+height: 100px;
+   
+}
+
+.energydatapane
+{
+ width: 90%;
+//table-layout:fixed;
+font-size: 11px;
+float: left;
+margin-left: 2%;
+
+padding-top: 2%;
+border:1px solid black;
+overflow: auto;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+}
+

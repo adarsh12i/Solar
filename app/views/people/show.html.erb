@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @person.first_name %>
+     <%= @person.last_name %>
+  </h1>
+  <p class="lead"><%= @person.email %> | <%= @person.phone %> | <%= @person.twitter %></p>
+  <hr class="my-4">
+
+  <p class="lead">
+   <%= link_to 'Edit', edit_person_path(@person), class:"btn btn-primary" %> |
+<%= link_to 'Back', people_path, class:"btn btn-primary" %>
+  </p>
+</div>
+<p>
+<p>
+ 
+
+
